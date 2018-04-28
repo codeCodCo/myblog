@@ -1,0 +1,141 @@
+/*全局*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+/*头部*/
+.header {
+    width: 100%;
+    height: 90px;
+    background-color: #cccccc;
+}
+
+.header ul li {
+    list-style: none;
+    float: left;
+    width: 160px;
+    height: 90px;
+    line-height: 90px;
+    text-align: center;
+}
+
+.header ul li:first-child {
+    margin-left: 115px;
+}
+
+.ontabs {
+    background-color: white;
+    border-bottom: 2px solid #000000;
+}
+
+.header h1 {
+    font-size: 20px;
+    float: left;
+    line-height: 90px;
+    padding-left: 5px;
+}
+
+.header img {
+    width: 30px;
+    height: 30px;
+    float: left;
+    padding-left: 100px;
+    padding-top: 30px;
+}
+
+.banner-left {
+    position: absolute;
+    left: 0;
+    width: 330px;
+    height: 100%;
+    background-color: #2f313b;
+    color: white;
+}
+
+.user-head {
+    width: 80px;
+    height: 80px;
+    padding: 5px;
+    background-color: #cccccc;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.user-head img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.banner-left p {
+    text-align: center;
+}
+
+.banner-left p a {
+    color: #ffffff;
+}
+
+.music-box {
+    margin: 0;
+    padding: 0;
+    /*  display: none;*/
+}
+
+#player {
+    margin-top: 0;
+    margin-left: 0;
+}
+
+.banner-footer {
+    color: deeppink;
+}
+.banner-footer p{
+    text-align: center;
+    margin: 0 auto;
+}
+
+.line-link {
+    margin-top: 80px;
+}
+
+.page-content {
+    float: left;
+    margin-left: 350px;
+    margin-top: 20px;
+}
+
+.page-content .kfbj {
+
+}
+
+.page-content .kfbj .page-list {
+    width: 800px;
+    height: 200px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.alink {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.alink:hover {
+    color: #2f313b;
+}

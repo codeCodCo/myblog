@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>七月下枫瑾的博客</title>
+    <link rel="stylesheet" href="css/blog.css">
+</head>
+<body>
+<header id="header" class="header">
+    <img src="img/header-logo.png" alt="">
+    <h1>七月下枫瑾 </h1>
+ <!--   <span>like music,like life</span>-->
+    <ul>
+        <li class="ontabs">开发笔记</li>
+        <li>生活杂谈</li>
+        <li>前端小趣味</li>
+    </ul>
+</header>
+<div class="container">
+    <div class="banner-left">
+        <div class="user-head">
+            <img src="img/travis-ci.png" alt="">
+        </div>
+        <div class="line-link">
+            <p><a href="http://www.cnblogs.com/ldw-blogs/">我的博客园</a></p><br><br><br>
+            <p><a href="https://github.com/Davidliking">我的Github</a></p>
+        </div><br><br><br>
+        <div class="author-reactor">
+            <p>热爱音乐的程序员，七月下枫瑾是我的网名，热爱博客论坛，SO创建这个网站基于github</p>
+        </div>
+        <br><br><br>
+        <div class="music-box" id="music-box">
+            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110
+                    src="//music.163.com/outchain/player?type=4&id=344276050&auto=0&height=90"></iframe>
+        </div>
+        <div class="banner-footer">
+            <p>@Copyright 七月下枫瑾 侵权必究</p>
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="kfbj qh-page">
+            <div class="page-list">
+                <h3>浅谈css3中的失误</h3>
+                <p class="page-contents">fetch号称是AJAX的替代品，它的好处在《传统 Ajax 已死，Fetch 永生》中提到有以下几点：
+
+                    符合关注分离，没有将输入、输出和用事件来跟踪的状态混杂在一个对象里
+                    更好更方便的写法，诸如：
+                    try {
+                    let response = await fetch(url);
+                    let data = response.json();
+                    console.log(data);
+                    } catch(e) {
+                    console.log("Oops, error", e);
+                    }
+                    坦白说，上面的理由对我来说完全没有什么说服力，因为不管是Jquery还是Axios都已经帮我们把xhr封装的足够好，使用起来也足够方便，为什么我们还要花费大力气去学习fetch？
+
+                    我认为fetch的优势主要优势就是：
+
+                    更加底层，提供的API丰富（request, response）
+                    脱离了XHR，是ES规范里新的实现方式
+                    大家都喜欢新的东西，坦白说，作为一个前端工程师，我在使用原生XHR的时候，尽管偶尔觉得写的丑陋，但是在使用了JQuery和axios之后，已经对这一块完全无所谓了。当然，如果新的fetch能做的同样好，我为了不掉队也会选择使用fetch。这个道理其实很好理解：你有一架歼8，魔改了N次，性能达到了歼10的水准，但是要是有个人给你拿来一架新的歼10，你也会毫不犹豫的选择新的歼10——不仅仅是新，也代表了还有新的魔改潜力。
+
+                    但是我最近在使用fetch的时候，也遇到了不少的问题：
+
+                    fetch是一个低层次的API，你可以把它考虑成原生的XHR，所以使用起来并不是那么舒服，需要进行封装
+                    例如：
+
+                    1）fetch只对网络请求报错，对400，500都当做成功的请求，需要封装去处理
+                    2）fetch默认不会带cookie，需要添加配置项
+                    3）fetch不支持abort，不支持超时控制，使用setTimeout及Promise.reject的实现的超时控制并不能阻止请求过程继续在后台运行，造成了流量的浪费
+                    4）fetch没有办法原生监测请求的进度，而XHR可以
+                    PS: fetch的具体问题大家可以参考：《fetch没有你想象的那么美》《fetch使用的常见问题及解决方法》</p>
+            </div>
+            <div class="page-list">
+                <h3>浅谈css3中的失误</h3>
+                <p class="page-contents">fetch号称是AJAX的替代品，它的好处在《传统 Ajax 已死，Fetch 永生》中提到有以下几点：
+
+                    符合关注分离，没有将输入、输出和用事件来跟踪的状态混杂在一个对象里
+                    更好更方便的写法，诸如：
+                    try {
+                    let response = await fetch(url);
+                    let data = response.json();
+                    console.log(data);
+                    } catch(e) {
+                    console.log("Oops, error", e);
+                    }
+                    坦白说，上面的理由对我来说完全没有什么说服力，因为不管是Jquery还是Axios都已经帮我们把xhr封装的足够好，使用起来也足够方便，为什么我们还要花费大力气去学习fetch？
+
+                    我认为fetch的优势主要优势就是：
+
+                    更加底层，提供的API丰富（request, response）
+                    脱离了XHR，是ES规范里新的实现方式
+                    大家都喜欢新的东西，坦白说，作为一个前端工程师，我在使用原生XHR的时候，尽管偶尔觉得写的丑陋，但是在使用了JQuery和axios之后，已经对这一块完全无所谓了。当然，如果新的fetch能做的同样好，我为了不掉队也会选择使用fetch。这个道理其实很好理解：你有一架歼8，魔改了N次，性能达到了歼10的水准，但是要是有个人给你拿来一架新的歼10，你也会毫不犹豫的选择新的歼10——不仅仅是新，也代表了还有新的魔改潜力。
+
+                    但是我最近在使用fetch的时候，也遇到了不少的问题：
+
+                    fetch是一个低层次的API，你可以把它考虑成原生的XHR，所以使用起来并不是那么舒服，需要进行封装
+                    例如：
+
+                    1）fetch只对网络请求报错，对400，500都当做成功的请求，需要封装去处理
+                    2）fetch默认不会带cookie，需要添加配置项
+                    3）fetch不支持abort，不支持超时控制，使用setTimeout及Promise.reject的实现的超时控制并不能阻止请求过程继续在后台运行，造成了流量的浪费
+                    4）fetch没有办法原生监测请求的进度，而XHR可以
+                    PS: fetch的具体问题大家可以参考：《fetch没有你想象的那么美》《fetch使用的常见问题及解决方法》</p>
+            </div>
+            <div class="page-list">
+                <h3>浅谈css3中的失误</h3>
+                <p class="page-contents">fetch号称是AJAX的替代品，它的好处在《传统 Ajax 已死，Fetch 永生》中提到有以下几点：
+
+                    符合关注分离，没有将输入、输出和用事件来跟踪的状态混杂在一个对象里
+                    更好更方便的写法，诸如：
+                    try {
+                    let response = await fetch(url);
+                    let data = response.json();
+                    console.log(data);
+                    } catch(e) {
+                    console.log("Oops, error", e);
+                    }
+                    坦白说，上面的理由对我来说完全没有什么说服力，因为不管是Jquery还是Axios都已经帮我们把xhr封装的足够好，使用起来也足够方便，为什么我们还要花费大力气去学习fetch？
+
+                    我认为fetch的优势主要优势就是：
+
+                    更加底层，提供的API丰富（request, response）
+                    脱离了XHR，是ES规范里新的实现方式
+                    大家都喜欢新的东西，坦白说，作为一个前端工程师，我在使用原生XHR的时候，尽管偶尔觉得写的丑陋，但是在使用了JQuery和axios之后，已经对这一块完全无所谓了。当然，如果新的fetch能做的同样好，我为了不掉队也会选择使用fetch。这个道理其实很好理解：你有一架歼8，魔改了N次，性能达到了歼10的水准，但是要是有个人给你拿来一架新的歼10，你也会毫不犹豫的选择新的歼10——不仅仅是新，也代表了还有新的魔改潜力。
+
+                    但是我最近在使用fetch的时候，也遇到了不少的问题：
+
+                    fetch是一个低层次的API，你可以把它考虑成原生的XHR，所以使用起来并不是那么舒服，需要进行封装
+                    例如：
+
+                    1）fetch只对网络请求报错，对400，500都当做成功的请求，需要封装去处理
+                    2）fetch默认不会带cookie，需要添加配置项
+                    3）fetch不支持abort，不支持超时控制，使用setTimeout及Promise.reject的实现的超时控制并不能阻止请求过程继续在后台运行，造成了流量的浪费
+                    4）fetch没有办法原生监测请求的进度，而XHR可以
+                    PS: fetch的具体问题大家可以参考：《fetch没有你想象的那么美》《fetch使用的常见问题及解决方法》</p>
+            </div>
+            <div class="page-list">
+                <h3>浅谈css3中的失误</h3>
+                <p class="page-contents">fetch号称是AJAX的替代品，它的好处在《传统 Ajax 已死，Fetch 永生》中提到有以下几点：
+
+                    符合关注分离，没有将输入、输出和用事件来跟踪的状态混杂在一个对象里
+                    更好更方便的写法，诸如：
+                    try {
+                    let response = await fetch(url);
+                    let data = response.json();
+                    console.log(data);
+                    } catch(e) {
+                    console.log("Oops, error", e);
+                    }
+                    坦白说，上面的理由对我来说完全没有什么说服力，因为不管是Jquery还是Axios都已经帮我们把xhr封装的足够好，使用起来也足够方便，为什么我们还要花费大力气去学习fetch？
+
+                    我认为fetch的优势主要优势就是：
+
+                    更加底层，提供的API丰富（request, response）
+                    脱离了XHR，是ES规范里新的实现方式
+                    大家都喜欢新的东西，坦白说，作为一个前端工程师，我在使用原生XHR的时候，尽管偶尔觉得写的丑陋，但是在使用了JQuery和axios之后，已经对这一块完全无所谓了。当然，如果新的fetch能做的同样好，我为了不掉队也会选择使用fetch。这个道理其实很好理解：你有一架歼8，魔改了N次，性能达到了歼10的水准，但是要是有个人给你拿来一架新的歼10，你也会毫不犹豫的选择新的歼10——不仅仅是新，也代表了还有新的魔改潜力。
+
+                    但是我最近在使用fetch的时候，也遇到了不少的问题：
+
+                    fetch是一个低层次的API，你可以把它考虑成原生的XHR，所以使用起来并不是那么舒服，需要进行封装
+                    例如：
+
+                    1）fetch只对网络请求报错，对400，500都当做成功的请求，需要封装去处理
+                    2）fetch默认不会带cookie，需要添加配置项
+                    3）fetch不支持abort，不支持超时控制，使用setTimeout及Promise.reject的实现的超时控制并不能阻止请求过程继续在后台运行，造成了流量的浪费
+                    4）fetch没有办法原生监测请求的进度，而XHR可以
+                    PS: fetch的具体问题大家可以参考：《fetch没有你想象的那么美》《fetch使用的常见问题及解决方法》</p>
+            </div>
+            <div class="page-list">
+                <h3>浅谈css3中的失误</h3>
+                <p class="page-contents">fetch号称是AJAX的替代品，它的好处在《传统 Ajax 已死，Fetch 永生》中提到有以下几点：
+
+                    符合关注分离，没有将输入、输出和用事件来跟踪的状态混杂在一个对象里
+                    更好更方便的写法，诸如：
+                    try {
+                    let response = await fetch(url);
+                    let data = response.json();
+                    console.log(data);
+                    } catch(e) {
+                    console.log("Oops, error", e);
+                    }
+                    坦白说，上面的理由对我来说完全没有什么说服力，因为不管是Jquery还是Axios都已经帮我们把xhr封装的足够好，使用起来也足够方便，为什么我们还要花费大力气去学习fetch？
+
+                    我认为fetch的优势主要优势就是：
+
+                    更加底层，提供的API丰富（request, response）
+                    脱离了XHR，是ES规范里新的实现方式
+                    大家都喜欢新的东西，坦白说，作为一个前端工程师，我在使用原生XHR的时候，尽管偶尔觉得写的丑陋，但是在使用了JQuery和axios之后，已经对这一块完全无所谓了。当然，如果新的fetch能做的同样好，我为了不掉队也会选择使用fetch。这个道理其实很好理解：你有一架歼8，魔改了N次，性能达到了歼10的水准，但是要是有个人给你拿来一架新的歼10，你也会毫不犹豫的选择新的歼10——不仅仅是新，也代表了还有新的魔改潜力。
+
+                    但是我最近在使用fetch的时候，也遇到了不少的问题：
+
+                    fetch是一个低层次的API，你可以把它考虑成原生的XHR，所以使用起来并不是那么舒服，需要进行封装
+                    例如：
+
+                    1）fetch只对网络请求报错，对400，500都当做成功的请求，需要封装去处理
+                    2）fetch默认不会带cookie，需要添加配置项
+                    3）fetch不支持abort，不支持超时控制，使用setTimeout及Promise.reject的实现的超时控制并不能阻止请求过程继续在后台运行，造成了流量的浪费
+                    4）fetch没有办法原生监测请求的进度，而XHR可以
+                    PS: fetch的具体问题大家可以参考：《fetch没有你想象的那么美》《fetch使用的常见问题及解决方法》</p>
+            </div>
+        </div>
+        <div class="shzt qh-page"></div>
+        <div class="qdqw qh-page">
+            <a href="">粒子背景大赏</a><br>
+            <a href="">粒子背景大赏</a><br>
+            <a href="">粒子背景大赏</a><br>
+            <a href="">粒子背景大赏</a><br>
+            <a href="">粒子背景大赏</a><br>
+            <a href="">粒子背景大赏</a><br>
+            <a href="">粒子背景大赏</a><br>
+            <a href="">粒子背景大赏</a><br>
+            <a href="">粒子背景大赏</a><br>
+        </div>
+    </div>
+</div>
+<script src="js/jquery-1.8.2.min.js"></script>
+<script src="js/blog.js"></script>
+</body>
+</html>
